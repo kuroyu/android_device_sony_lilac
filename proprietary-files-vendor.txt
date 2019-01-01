@@ -11,6 +11,7 @@ vendor/lib/libfastcrc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libfastrpc_utf_stub.so
+vendor/lib/libscveFaceLandmarks.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
@@ -21,9 +22,9 @@ vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libhvxMathVIO.so
+#vendor/lib/rfsa/adsp/libhvxMathVIO.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
+#vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsomc_alfortlpserv_skel.so
 vendor/lib/rfsa/adsp/libsomc_sumomolpserv_skel.so
@@ -35,6 +36,7 @@ vendor/lib64/libfastcrc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 vendor/lib64/libfastrpc_utf_stub.so
+vendor/lib64/libscveFaceLandmarks.so
 
 # AUDIO
 vendor/etc/acdbdata/Fluid/Fluid_Bluetooth_cal.acdb
@@ -557,6 +559,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # DPM
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
+vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 vendor/bin/dpmQmiMgr
@@ -712,7 +715,6 @@ vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/bin/hw/vendor.semc.system.idd@1.0-service
 vendor/bin/idd-logreader
 vendor/bin/iddd
-vendor/bin/startup-logger
 vendor/etc/iddd.conf
 #vendor/etc/init/vendor.semc.system.idd.fallback@1.0-service.rc
 vendor/etc/init/vendor.semc.system.idd@1.0-service.rc
@@ -830,15 +832,9 @@ vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
-# MODEM
-vendor/bin/sony-modem-switcher
-
 # MSM
 vendor/bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
-
-# MSS
-vendor/bin/mssconfig
 
 # NFC
 vendor/lib/libpn553_fw.so
@@ -846,7 +842,7 @@ vendor/lib/libpn553_fw.so
 # PERIPHERAL_MANAGER
 vendor/bin/pm-proxy
 vendor/bin/pm-service
-vendor/bin/spdaemon
+#vendor/bin/spdaemon
 vendor/lib/libperipheral_client.so
 vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
@@ -859,7 +855,7 @@ vendor/bin/mlog_qmi_service
 vendor/bin/qns
 
 # QSEECOMD
-vendor/bin/qseecom_sample_client
+#vendor/bin/qseecom_sample_client
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libcppf.so
@@ -889,9 +885,9 @@ vendor/lib64/libssd.so
 
 # QTI_ANT
 vendor/lib/com.qualcomm.qti.ant@1.0.so
-vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
-vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # QTI_BLUETOOTH
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -902,12 +898,6 @@ vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
-
-# QTI_DPM_API
-vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib/libdpmqmihal.so
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib64/libdpmqmihal.so
 
 # QTI_ESEPOWERMANAGER
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
@@ -1186,7 +1176,7 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 
 # SECD
 vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
-vendor/bin/secd
+#vendor/bin/secd
 vendor/etc/firmware/tzsuntory.b00
 vendor/etc/firmware/tzsuntory.b01
 vendor/etc/firmware/tzsuntory.b02
@@ -1224,7 +1214,7 @@ vendor/bin/sct_service
 vendor/etc/init/sct_service.rc
 
 # SENSORS
-vendor/bin/sensors.qcom
+vendor/bin/sensors.qti
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/etc/sensors/sensor_def_somc_platform.conf
@@ -1248,9 +1238,7 @@ vendor/lib64/sensors.ssc.so
 
 # SSR
 vendor/bin/ssr_diag
-vendor/bin/ssr_dumper
 vendor/bin/ssr_setup
-vendor/bin/bt_ssr_dumper
 
 # THERMAL
 vendor/bin/hw/vendor.semc.hardware.thermal@1.0-service
