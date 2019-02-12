@@ -1,5 +1,6 @@
 # BOOT
 vendor/bin/init.qcom.early_boot.sh
+vendor/bin/ffu|116bbd07bc961046db3174721212691f59c7643d
 
 # ADSP
 vendor/bin/adsprpcd
